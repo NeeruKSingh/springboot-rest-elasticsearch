@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.java.elasticsearch.beans.User;
+import com.java.elasticsearch.req.beans.User;
 import com.java.elasticsearch.service.IUserService;
 
 @RestController
@@ -27,7 +27,7 @@ public class UserController {
 	
 	
 	@GetMapping("/userid/{userid}")
-	public User getUserById(@PathVariable("userid") int userId) {
+	public User getUserById(@PathVariable("userid") String userId) {
 		return userService.getUserById(userId);
 	}
 	
